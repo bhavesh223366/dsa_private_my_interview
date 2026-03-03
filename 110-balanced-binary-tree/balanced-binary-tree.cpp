@@ -1,4 +1,4 @@
-class Solution {
+   class Solution {
 public:
     bool isBalanced(TreeNode* root) {
         return dfsHeight(root) != -1;
