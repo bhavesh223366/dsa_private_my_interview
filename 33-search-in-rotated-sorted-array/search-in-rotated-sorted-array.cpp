@@ -16,10 +16,20 @@ public:
                 return mid;
             }
 
-            // Left half sorted
-            if(nums[start] <= nums[mid]) {
+            // Handle duplicates
+            if(nums[start] == nums[mid] &&
+               nums[mid] == nums[end]) {
 
-                if(nums[start] <= target && target <= nums[mid]) {
+                start++;
+                end--;
+            }
+
+            // Left half sorted
+            else if(nums[start] <= nums[mid]) {
+
+                if(nums[start] <= target &&
+                   target < nums[mid]) {
+
                     end = mid - 1;
                 }
                 else {
@@ -30,7 +40,9 @@ public:
             // Right half sorted
             else {
 
-                if(target >= nums[mid] && target <= nums[end]) {
+                if(nums[mid] < target &&
+                   target <= nums[end]) {
+
                     start = mid + 1;
                 }
                 else {
