@@ -13,7 +13,7 @@ public:
 
             maxsum = max(cursum, maxsum);
 
-            if(cursum < 0)
+            if(cursum <= 0)
                 cursum = 0;
         }
 
