@@ -2,6 +2,8 @@ class Solution {
 public:
     string minWindow(string s, string t) {
 
+     // using sliding window + two pointer... o(n) + o()
+     // using the interations n
         vector<int> freq(128, 0);
 
         for (char c : t) {
